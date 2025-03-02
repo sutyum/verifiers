@@ -1,6 +1,6 @@
 import verifiers as vf
 
-model_name = "Qwen/Qwen2.5-0.5b-Instruct"
+model_name = "Qwen/Qwen2.5-0.5B-Instruct"
 model, tokenizer = vf.get_model_and_tokenizer(model_name)
 
 vf_env = vf.MathEnv(dataset="gsm8k")
