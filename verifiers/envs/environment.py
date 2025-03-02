@@ -4,7 +4,7 @@ import logging
 
 from datasets import Dataset
 from trl.trainer.grpo_trainer import RewardFunc
-from ..imports import LLM, SamplingParams  # type: ignore
+from verifiers.envs.imports import LLM, SamplingParams  # type: ignore
 
 class Environment(ABC):
 

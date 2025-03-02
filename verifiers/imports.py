@@ -6,7 +6,7 @@ IS_MACOS = platform.system() == 'Darwin'
 
 # Use mock vLLM on macOS, real vLLM otherwise
 if IS_MACOS:
-    from .mock_vllm import LLM, SamplingParams
+    from verifiers.mock_vllm import LLM, SamplingParams
 else:
     from vllm import LLM, SamplingParams  # type: ignore
 

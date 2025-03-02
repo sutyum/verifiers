@@ -1,14 +1,14 @@
-from .envs.environment import Environment
-from .envs.code_env import CodeEnv
-from .envs.doublecheck_env import DoubleCheckEnv
-from .envs.math_env import MathEnv
-from .envs.simple_env import SimpleEnv
-from .envs.tool_env import ToolEnv
-from .trainers.grpo_env_trainer import GRPOEnvTrainer
-from .utils.data_utils import extract_boxed_answer, extract_hash_answer, preprocess_dataset
-from .utils.model_utils import get_model, get_tokenizer, get_model_and_tokenizer
-from .utils.config_utils import get_default_grpo_config
-from .utils.logging_utils import setup_logging, print_prompt_completions_sample
+from verifiers.envs.environment import Environment
+from verifiers.envs.code_env import CodeEnv
+from verifiers.envs.doublecheck_env import DoubleCheckEnv
+from verifiers.envs.math_env import MathEnv
+from verifiers.envs.simple_env import SimpleEnv
+from verifiers.envs.tool_env import ToolEnv
+from verifiers.trainers.grpo_env_trainer import GRPOEnvTrainer
+from verifiers.utils.data_utils import extract_boxed_answer, extract_hash_answer, preprocess_dataset
+from verifiers.utils.model_utils import get_model, get_tokenizer, get_model_and_tokenizer
+from verifiers.utils.config_utils import get_default_grpo_config
+from verifiers.utils.logging_utils import setup_logging, print_prompt_completions_sample
 
 
 __version__ = "0.1.0"

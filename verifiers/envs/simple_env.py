@@ -1,11 +1,9 @@
-from abc import abstractmethod
-import json
 import random
 from typing import List, Dict, Sequence, Any, Union
 
 from datasets import Dataset
 
-from ..imports import LLM, SamplingParams  # type: ignore
+from verifiers.envs.imports import LLM, SamplingParams  # type: ignore
 from verifiers.envs.environment import Environment
 
 
