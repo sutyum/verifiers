@@ -3,7 +3,7 @@ from typing import List, Dict, Sequence, Any, Union
 
 from datasets import Dataset
 from trl.trainer.grpo_trainer import RewardFunc
-from verifiers.envs.imports import LLM, SamplingParams  # type: ignore
+from verifiers.imports import LLM, SamplingParams  # type: ignore
 
 from verifiers.envs.environment import Environment
 
