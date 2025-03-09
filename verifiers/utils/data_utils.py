@@ -1,7 +1,6 @@
 import random
 import json
 from typing import List, Dict
-
 from datasets import Dataset, load_dataset # type: ignore
 
 def extract_boxed_answer(text: str) -> str | None:
@@ -15,7 +14,6 @@ def extract_boxed_answer(text: str) -> str | None:
                 count -= 1
             i += 1
         return i - 1 if count == 0 else -1
-
     # Find \boxed{
     boxed_start = text.find('\\boxed{')
     if boxed_start == -1:
@@ -56,6 +54,18 @@ def preprocess_dataset(dataset_name: str = "gsm8k",
         dataset = dataset.map(lambda x: {
             "prompt": format_prompt(x["question"], system_prompt, few_shot, fewshot_prob),
             "answer": extract_hash_answer(x["answer"])
+        })
+        return dataset
+    elif dataset_name == "Technoculture/ambiguous_gsm8k":
+        # Load your custom ambiguous GSM8k dataset
+        dataset: Dataset = load_dataset(dataset_name)[split] # type: ignore
+        
+        # Customize this mapping based on your dataset's structure
+        dataset = dataset.map(lambda x: {
+            "prompt": format_prompt(x["question"], system_prompt, few_shot, fewshot_prob),
+            "answer": extract_hash_answer(x["answer"]),
+            # Include the missing_info field for potential use in the environment
+            "missing_info": x.get("missing_info", [])
         })
         return dataset
     elif dataset_name == "math":
